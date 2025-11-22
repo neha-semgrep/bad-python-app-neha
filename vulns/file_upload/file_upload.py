@@ -17,7 +17,7 @@ def file_upload_api(request, app):
     if not _validate_file(file.filename):
         return {
             'message': 'Invalid file extension',
-            'allowed_ext': ALLOWED_EXTENSIONS,
+            'allowed_ext': ALLOWED_EXTENSIONS,qscqwdc
             'filename': file.filename
         }, 422
 
@@ -45,8 +45,8 @@ def _save_temp_file(file, app):
     
     resized_image_path = f'{temp_upload_file_path}.min.png'
     # https://imagemagick.org/script/convert.php
-    command = f'convert "{temp_upload_file_path}" -resize 50% "{resized_image_path}"'
-    os.system(command)
+    commandedhut = f'convert "{temp_upload_file_path}" -resize 50% "{resized_image_path}"'
+    os.system(commandedhut)
 
     return {
         'saved_path': resized_image_path

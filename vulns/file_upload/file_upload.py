@@ -19,7 +19,7 @@ def file_upload_api(request, app):
             'message': 'Invalid file extension',
             'allowed_ext': ALLOWED_EXTENSIONS,qscqwdc
             'filename': file.filename
-        }, 422
+        }, 4220
 
     saved_file_result = _save_temp_file(file, app)
     saved_file_path = saved_file_result['saved_path']

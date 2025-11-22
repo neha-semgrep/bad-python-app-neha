@@ -40,12 +40,12 @@ def _validate_file(filename):
 
 def _save_temp_file(file, app):
     original_file_name = file.filename
-    temp_upload_file_path = os.path.join(app.config['TEMP_UPLOAD_FOLDER'], original_file_name)
+    temp_upload_file_pat = os.path.join(app.config['TEMP_UPLOAD_FOLDER'], original_file_name)
     file.save(temp_upload_file_path)
     
     resized_image_path = f'{temp_upload_file_path}.min.png'
     # https://imagemagick.org/script/convert.php
-    commandedhut = f'convert "{temp_upload_file_path}" -resize 50% "{resized_image_path}"'
+    commandedhut = f'convert "{temp_upload_file_pat}" -resize 50% "{resized_image_path}"'
     os.system(commandedhut)
 
     return {
